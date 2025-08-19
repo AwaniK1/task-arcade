@@ -1,0 +1,148 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0d1b2a;
+  color: #f1f1f1;
+}
+
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+
+.nav {
+  background: #1b263b;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand {
+  font-weight: bold;
+  font-size: 20px;
+}
+.links a {
+  margin-left: 15px;
+  color: #aaa;
+  text-decoration: none;
+}
+.links a:hover {
+  color: #64ffda;
+}
+
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px 20px;
+  gap: 20px;
+}
+.hero-text h1 {
+  font-size: 26px;
+}
+.hero-text p {
+  color: #bbb;
+}
+.btn-primary {
+  padding: 8px 14px;
+  background: #64ffda;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background: #50d6b7;
+}
+
+
+.hero-card {
+  background: #1e2d4d;
+  padding: 14px;
+  border-radius: 6px;
+  width: 250px;
+}
+.progress {
+  height: 8px;
+  background: #33415c;
+  border-radius: 4px;
+}
+.bar {
+  height: 100%;
+  background: #64ffda;
+}
+.mini-stats {
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+
+.features {
+  padding: 30px 20px;
+}
+.features h2 {
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.feature {
+  background: #1e2d4d;
+  padding: 12px;
+  border-radius: 6px;
+  flex: 1 1 250px;
+}
+
+
+.task-manager {
+  margin-top: 10px;
+}
+.task-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.task-form input,
+.task-form select {
+  padding: 6px;
+  border-radius: 4px;
+  border: none;
+}
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+.task-list li {
+  background: #24344d;
+  margin: 6px 0;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.task-list li:hover {
+  background: #2a3b58;
+}
+.task-list li.completed {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+
+.footer {
+  text-align: center;
+  background: #1b263b;
+  padding: 12px;
+  font-size: 14px;
+  color: #aaa;
+}
