@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import { fetchTasks, createTask, toggleTask, deleteTask } from './api/api';
-import TaskList from './components/TaskList'; // ✅ default import
-import Dashboard from './components/Dashboard'; // ✅ default import
-
+import TaskList from './components/TaskList';
+import Dashboard from './components/Dashboard';
 
 function App() {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState('');
+  const [priority, setPriority] = useState('Medium');
+  const [dueDate, setDueDate] = useState('');
 
   const loadTasks = async () => {
     try {
@@ -25,8 +26,10 @@ function App() {
   const handleAdd = async () => {
     if (!newTask) return;
     try {
-      await createTask({ title: newTask });
+      await createTask({ title: newTask, priority, dueDate: dueDate || null });
       setNewTask('');
+      setPriority('Medium');
+      setDueDate('');
       loadTasks();
     } catch (err) {
       console.error(err);
@@ -53,8 +56,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Task Arcade</h1>
+      <h1>🎮 Task Arcade</h1>
       <Dashboard tasks={tasks} />
+
       <div className="task-input">
         <input
           type="text"
@@ -62,8 +66,19 @@ function App() {
           onChange={e => setNewTask(e.target.value)}
           placeholder="Add new task"
         />
-        <button onClick={handleAdd}>Add Task</button>
+        <select value={priority} onChange={e => setPriority(e.target.value)}>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+        <input
+          type="date"
+          value={dueDate}
+          onChange={e => setDueDate(e.target.value)}
+        />
+        <button onClick={handleAdd}>Add</button>
       </div>
+
       <TaskList tasks={tasks} onToggle={handleToggle} onDelete={handleDelete} />
     </div>
   );

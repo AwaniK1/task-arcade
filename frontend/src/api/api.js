@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-// Replace port if your backend is running on a different port
 const API = axios.create({ baseURL: 'http://localhost:5000/api' });
 
 export const fetchTasks = () => API.get('/tasks');
