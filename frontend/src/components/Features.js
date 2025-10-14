@@ -1,21 +1,23 @@
+import { useState } from "react";
 import TaskManager from "./TaskManager";
+import Dashboard from "./Dashboard";
 
 function Features() {
+  const [stats, setStats] = useState({});
+
   return (
     <section className="features">
       <h2>Main Features</h2>
 
       <div className="feature">
         <h3>Task Manager</h3>
-        <TaskManager />   {/* 👈 must be inside this div */}
+        <TaskManager onStatsUpdate={setStats} />
       </div>
 
       <div className="feature">
-        <h3>Rewards</h3>
-        <p>Get rewards by completing tasks.</p>
+        <h3>Rewards & Stats</h3>
+        <Dashboard stats={stats} />
       </div>
-
-      
     </section>
   );
 }

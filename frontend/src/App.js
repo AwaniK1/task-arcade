@@ -1,10 +1,8 @@
-//import logo from './logo.svg';
-//import './App.css';
+import './App.css';
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
 import Footer from "./components/Footer";
-
 
 function App() {
   return (
@@ -13,7 +11,6 @@ function App() {
       <main>
         <Hero />
         <Features />
-        
       </main>
       <Footer />
     </div>
@@ -21,3 +18,4 @@ function App() {
 }
 
 export default App;
+

@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="footer" id="contact">
+    <footer className="footer">
       <p>{new Date().getFullYear()} Task Arcade • Built by Awani K</p>
     </footer>
   );
