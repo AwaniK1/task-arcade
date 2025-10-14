@@ -1,49 +1,30 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: #0f1b2d;
-  color: #f2f2f2;
+.App {
+  text-align: center;
+  padding: 20px;
+  font-family: sans-serif;
 }
 
-.page { 
-  display: flex; 
-  flex-direction: column; 
-  min-height: 100vh; 
+.task-input {
+  margin: 20px 0;
 }
 
-main { flex: 1; padding: 15px; }
+.task-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 5px 0;
+}
 
-/* Navbar */
-.nav { background: #1c2b45; padding: 10px 18px; display: flex; justify-content: space-between; align-items: center; }
-.brand { font-size: 20px; font-weight: bold; color: #e3f2fd; }
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
 
-/* Hero Section */
-.hero { padding: 20px; background: #12243a; border-radius: 6px; margin: 15px; }
-.hero-text h1 { font-size: 22px; margin-bottom: 6px; }
-.hero-text p { color: #c5c5c5; margin-bottom: 12px; }
-.btn-primary { padding: 7px 14px; background: #4fc3f7; border: none; color: #0d1b2a; cursor: pointer; border-radius: 4px; font-weight: 500; }
-.btn-primary:hover { background: #29b6f6; }
-
-/* Features Section */
-.features { padding: 25px; }
-.features h2 { font-size: 20px; margin-bottom: 12px; }
-.feature { background: #1e2d4d; padding: 12px; border-radius: 5px; margin-bottom: 12px; }
-
-/* Task Manager */
-.task-manager { margin-top: 10px; }
-.task-form { margin-bottom: 12px; }
-.task-form input { padding: 6px; margin-right: 6px; border: none; border-radius: 4px; width: 200px; }
-.task-form button { padding: 6px 12px; background: #64ffda; border: none; border-radius: 4px; cursor: pointer; }
-.task-form button:hover { background: #4de2c2; }
-.task-list { list-style: none; padding: 0; }
-.task-list li { background: #24344d; padding: 8px; margin: 4px 0; cursor: pointer; border-radius: 4px; display: flex; justify-content: space-between; }
-.task-list li:hover { background: #2b4460; }
-.task-list li.completed { text-decoration: line-through; color: #999; }
-
-/* Dashboard */
-.hero-card { margin-top: 16px; background: #1c3252; padding: 12px; width: 250px; border-radius: 5px; }
-.progress { height: 8px; background: #33415c; border-radius: 4px; }
-.bar { height: 100%; background: #64ffda; border-radius: 4px; }
-
-/* Footer */
-.footer { text-align: center; background: #1b263b; padding: 10px; font-size: 13px; color: #ccc; }
+.dashboard {
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: inline-block;
+  text-align: left;
+}
