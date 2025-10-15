@@ -2,16 +2,17 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #f0f4f8, #e3f2fd);
+  background: linear-gradient(135deg, #e3f2fd, #f8f9fa);
   color: #333;
+  min-height: 100vh;
 }
 
 h1 {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 25px;
   font-size: 2.2rem;
-  color: #1976d2;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  color: #1565c0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 /* ---------- App Container ---------- */
@@ -45,7 +46,7 @@ h1 {
 .task-input select:focus,
 .task-input input[type="date"]:focus {
   border-color: #1976d2;
-  box-shadow: 0 0 5px rgba(25,118,210,0.3);
+  box-shadow: 0 0 5px rgba(25, 118, 210, 0.3);
 }
 
 .task-input button {
@@ -62,7 +63,7 @@ h1 {
 .task-input button:hover {
   background: linear-gradient(90deg, #66bb6a, #43a047);
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* ---------- Task List ---------- */
@@ -74,14 +75,14 @@ h1 {
   margin: 8px 0;
   border-radius: 10px;
   background: white;
-  box-shadow: 0 3px 7px rgba(0,0,0,0.08);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   border-left: 6px solid transparent;
 }
 
 .task-item:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .task-item input[type="checkbox"] {
@@ -90,17 +91,46 @@ h1 {
   cursor: pointer;
 }
 
-.task-item span {
+.task-text {
+  display: flex;
+  flex-direction: column;
   flex: 1;
   margin-left: 10px;
-  font-size: 1rem;
 }
 
-.task-item span.completed {
+/* ---------- Priority Colors ---------- */
+.task-item[data-priority="High"] {
+  border-left: 6px solid #e53935;
+}
+
+.task-item[data-priority="Medium"] {
+  border-left: 6px solid #fb8c00;
+}
+
+.task-item[data-priority="Low"] {
+  border-left: 6px solid #43a047;
+}
+
+/* ---------- Completed Task Styling ---------- */
+.completed-text {
   text-decoration: line-through;
-  color: #999;
+  color: #9e9e9e;
 }
 
+.task-item.completed {
+  opacity: 0.8;
+  transform: scale(0.99);
+}
+
+/* ---------- Due Date ---------- */
+.task-due {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* ---------- Delete Button ---------- */
 .task-item button {
   border: none;
   background: #ef5350;
@@ -126,7 +156,7 @@ h1 {
 .dashboard {
   background: linear-gradient(135deg, #f9f9ff, #fff8e1);
   border-radius: 15px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin: 20px 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -147,7 +177,7 @@ h1 {
   background: white;
   border-radius: 12px;
   padding: 15px 25px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
   text-align: center;
   margin: 5px;
   flex: 1 1 120px;
@@ -166,7 +196,7 @@ h1 {
   color: #2e7d32;
 }
 
-/* Progress Bar */
+/* ---------- Progress Bar ---------- */
 .progress-container {
   text-align: center;
   margin-top: 15px;
@@ -179,7 +209,7 @@ h1 {
   width: 90%;
   margin: 0 auto;
   overflow: hidden;
-  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .progress-fill {
@@ -194,6 +224,11 @@ h1 {
   color: #444;
   margin-top: 8px;
   font-weight: 500;
+}
+
+/* ---------- Subtle Glow for High Priority ---------- */
+.task-item[data-priority="High"]:hover {
+  box-shadow: 0 0 12px rgba(229, 57, 53, 0.4);
 }
 
 /* ---------- Responsive ---------- */
