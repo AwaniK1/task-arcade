@@ -1,15 +1,12 @@
 import React from 'react';
 
 const TaskItem = ({ task, onToggle, onDelete }) => {
-  const isOverdue =
-    task.dueDate && !task.completed && new Date(task.dueDate) < new Date();
+  const isOverdue = task.dueDate && !task.completed && new Date(task.dueDate) < new Date();
 
   return (
     <div
-      className={`task-item ${isOverdue ? 'overdue' : ''} ${
-        task.completed ? 'completed' : ''
-      }`}
-      data-priority={task.priority}
+      className={`task-item ${isOverdue ? 'overdue' : ''}`}
+      data-priority={task.priority} // priority border handled by CSS
     >
       <div className="task-text">
         <input
@@ -17,7 +14,7 @@ const TaskItem = ({ task, onToggle, onDelete }) => {
           checked={task.completed}
           onChange={() => onToggle(task._id)}
         />
-        <span className={task.completed ? 'completed-text' : ''}>
+        <span className={task.completed ? 'completed' : ''}>
           {task.title}
         </span>
         {task.dueDate && (

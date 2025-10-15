@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import { fetchTasks, createTask, toggleTask, deleteTask } from './api/api';
+import { fetchTasks, createTask, toggleTask, deleteTask } from './api/api.js';
 import TaskList from './components/TaskList';
 import Dashboard from './components/Dashboard';
 
